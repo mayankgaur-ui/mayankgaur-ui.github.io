@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Gaur - CX & Operations Leader</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .title {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            list-style: none;
+        }
+        
+        .achievements li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .achievements li:before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .achievement-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-text {
+            font-size: 0.9em;
+        }
+        
+        .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .cert-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Mayank Gaur</h1>
+            <p class="title">CX & Operations Leader | BPO Site Setup & Management | Strategic Ops Leadership</p>
+            <div class="contact-info">
+                <a href="mailto:gaur.mak@gmail.com">
+                    <i class="fas fa-envelope"></i> gaur.mak@gmail.com
+                </a>
+                <a href="tel:+919205499179">
+                    <i class="fas fa-phone"></i> +91 9205499179
+                </a>
+                <a href="https://www.linkedin.com/in/mayank-gaur-2913664a" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2><i class="fas fa-user"></i> Professional Summary</h2>
+            <div class="summary">
+                Senior operations and customer experience leader with <strong>13+ years</strong> of success in scaling global delivery organizations across CX, Trust & Safety, Social Media, Travel, Insurance and BPO sectors. Proven expertise in vendor site setup, managing 200+ FTE teams, and driving multi-million-dollar efficiency gains through automation, AI/ML, and workforce analytics. Skilled in Agile frameworks, product lifecycle management, and <strong>Lean Six Sigma Black Belt</strong> practices to deliver process efficiency, compliance, and customer trust in both Fortune 500 and high-growth environments.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Customer Experience Manager / Lead (Social Media & CS Labs)</div>
+                <div class="company">Airbnb, Gurugram, India</div>
+                <div class="date">December 2019 - March 2025</div>
+                <ul class="achievements">
+                    <li>Led 100+ FTE global CX & Social Media operations across multiple regions with <5% attrition during COVID remote restructuring</li>
+                    <li>Partnered with Product, Legal, and Policy teams to design scalable governance and operational strategies</li>
+                    <li>Cut issue resolution time 28% via automation; predictive case routing reduced TAT 35%</li>
+                    <li>Delivered 15–20% ROI improvement in US/global sales operations through AI/ML-led analytics</li>
+                    <li>Set up 150+ FTE Teleperformance vendor site, outsourcing multiple LOBs in compliance with regulations</li>
+                    <li>Launched AI/ML sentiment analysis, boosting accuracy and customer trust</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Assistant Manager</div>
+                <div class="company">EXL Services, NOIDA, India</div>
+                <div class="date">July 2016 – October 2019</div>
+                <ul class="achievements">
+                    <li>Managed offshore delivery for UK-based insurance claims operations, ensuring SLA adherence</li>
+                    <li>Led Lean Six Sigma projects to streamline claims lifecycle and improve customer handling processes</li>
+                    <li>Achieved 97% quality compliance across three consecutive quarters</li>
+                    <li>Designed onboarding frameworks reducing new hire ramp-up time by 40%</li>
+                    <li>Improved first contact resolution (FCR) by 15% through SOP redesign</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Team Lead</div>
+                <div class="company">Able Professional Pvt Ltd, Delhi, India</div>
+                <div class="date">April 2013 – June 2016</div>
+                <ul class="achievements">
+                    <li>Led NA technical & pre-sales support across calls, chat, and troubleshooting</li>
+                    <li>Designed knowledge base systems and SOPs, reducing average handle time (AHT) by 20%</li>
+                    <li>Built and stabilized two new operational teams from scratch</li>
+                    <li>Implemented real-time reporting systems, improving operational control and responsiveness</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-trophy"></i> Key Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">200+</div>
+                    <div class="achievement-text">FTE Global Operations Led</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">$12M+</div>
+                    <div class="achievement-text">Annual Vendor Savings</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">99%</div>
+                    <div class="achievement-text">SLA Compliance Achieved</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">30-40%</div>
+                    <div class="achievement-text">AHT Reduction via AI/ML</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">$6-9M</div>
+                    <div class="achievement-text">Annual Savings through Automation</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">40+</div>
+                    <div class="achievement-text">Leaders & Managers Coached</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-tools"></i> Tools & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>CX & CRM Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Salesforce Service Cloud</span>
+                        <span class="skill-tag">Zendesk</span>
+                        <span class="skill-tag">Freshdesk</span>
+                        <span class="skill-tag">Genesys Cloud CX</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Social Media & Trust Ops</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Sprinklr</span>
+                        <span class="skill-tag">Khoros</span>
+                        <span class="skill-tag">Hootsuite</span>
+                        <span class="skill-tag">Brandwatch</span>
+                        <span class="skill-tag">Crisp</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Analytics & BI</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Looker</span>
+                        <span class="skill-tag">Google Data Studio</span>
+                        <span class="skill-tag">MS Excel</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Automation & AI/ML</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">UiPath</span>
+                        <span class="skill-tag">Automation Anywhere</span>
+                        <span class="skill-tag">Blue Prism</span>
+                        <span class="skill-tag">GenAI/LLM Agent Assist</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Agile & Product Lifecycle</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">JIRA</span>
+                        <span class="skill-tag">Confluence</span>
+                        <span class="skill-tag">Asana</span>
+                        <span class="skill-tag">Aha!</span>
+                        <span class="skill-tag">Trello</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Workforce Management</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">NICE IEX</span>
+                        <span class="skill-tag">Verint</span>
+                        <span class="skill-tag">ServiceNow</span>
+                        <span class="skill-tag">Workday</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            <div class="certifications-list">
+                <div class="cert-item">
+                    <strong>Lean Six Sigma Black Belt</strong> - Benchmark X 360
+                </div>
+                <div class="cert-item">
+                    <strong>Lean Six Sigma Green Belt</strong> - Benchmark X 360
+                </div>
+                <div class="cert-item">
+                    <strong>Agile Service Management</strong>
+                </div>
+                <div class="cert-item">
+                    <strong>Operational Excellence Foundations & Kaizen Facilitator</strong>
+                </div>
+                <div class="cert-item">
+                    <strong>Managing a Customer Contact Center</strong>
+                </div>
+                <div class="cert-item">
+                    <strong>Product Management: Strategy & Roadmap</strong>
+                </div>
+                <div class="cert-item">
+                    <strong>Learning Jira (Server Edition)</strong>
+                </div>
+                <div class="cert-item">
+                    <strong>BI Tools</strong> - Tableau, Power BI
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="experience-item">
+                <div class="job-title">Bachelor of Technology, Information Technology & Computer Science</div>
+                <div class="company">Jaypee Institute of Information Technology, India</div>
+                <div class="date">2012</div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+        <p>&copy; 2025 Mayank Gaur. All rights reserved.</p>
+        <p>Ready to transform operations with AI/ML and data-driven excellence.</p>
+    </footer>
+</body>
+</html>
