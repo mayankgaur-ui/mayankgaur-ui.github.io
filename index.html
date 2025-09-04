@@ -6,25 +6,25 @@
   <title>Mayank Gaur - CX & Operations Leader</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Global reset and base styles */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #e6f0ff;
-      height: 100vh;
-      overflow-x: hidden;
       color: #0f2147;
+      background: #e6f0ff;
+      scroll-behavior: smooth;
     }
     nav {
       position: fixed;
-      top: 20px;
-      right: 40px;
-      z-index: 10;
-      display: flex;
-      gap: 25px;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards 1s;
+      top: 20px; right: 40px;
+      display: flex; gap: 25px;
+      background: rgba(255 255 255 / 0.85);
+      padding: 0.5em 1em;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(65,105,225,0.3);
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
@@ -33,128 +33,99 @@
       font-size: 1rem;
       transition: color 0.3s ease;
       cursor: pointer;
+      padding: 0.5em 1em;
+      border-radius: 20px;
     }
     nav a:hover {
-      color: #4169e1;
+      color: #fff;
+      background-color: #4169e1;
+      box-shadow: 0 4px 15px rgba(65,105,225,0.6);
     }
-    header {
+
+    section {
+      min-height: 100vh;
+      padding: 6em 5vw 4em 5vw;
       position: relative;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 10vw;
+      text-align: center;
+    }
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      color: #0f2147;
+    }
+    p, ul {
+      font-weight: 400;
+      color: #2c3a6a;
+      max-width: 700px;
+      margin: 0 auto 2em;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+    }
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #4169e1;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1;
+      top: 0.2em;
+    }
+    /* Home Section */
+    #home {
       background: linear-gradient(120deg, #4169e1 30%, #8fb9ff 90%);
       color: #fff;
-      overflow: hidden;
+      padding-top: 8em;
+      padding-bottom: 8em;
     }
-    .floating-shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.8;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-    }
-    .shape1 {
-      width: 150px; height: 150px;
-      background: #fff5;
-      top: 10%; left: 15%;
-      animation-name: float1;
-      animation-duration: 6s;
-    }
-    .shape2 {
-      width: 200px; height: 200px;
-      background: #bbd3ff99;
-      top: 40%; left: 35%;
-      animation-name: float2;
-      animation-duration: 5.5s;
-    }
-    .shape3 {
-      width: 120px; height: 120px;
-      background: #1452f05e;
-      top: 30%; left: 60%;
-      animation-name: float3;
-      animation-duration: 6.5s;
-    }
-    .shape4 {
-      width: 180px; height: 180px;
-      background: #7a92e8aa;
-      top: 70%; left: 20%;
-      animation-name: float4;
-      animation-duration: 7s;
-    }
-    .shape5 {
-      width: 100px; height: 100px;
-      background: #e4edffaa;
-      top: 75%; left: 70%;
-      animation-name: float5;
-      animation-duration: 6.2s;
-    }
-    @keyframes float1 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-25px) translateX(8px); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-18px) translateX(-10px); }
-    }
-    @keyframes float3 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-22px) translateX(15px); }
-    }
-    @keyframes float4 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-20px) translateX(-8px); }
-    }
-    @keyframes float5 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-15px) translateX(10px); }
-    }
-    h1 {
+    #home h1 {
       font-size: 4rem;
-      font-weight: 700;
-      max-width: 600px;
-      line-height: 1.1;
-      margin-bottom: 0.35em;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 0.5s;
+      animation: fadeInUp 1s ease forwards;
     }
-    h3 {
+    #home h3 {
       font-size: 1.8rem;
-      font-weight: 500;
-      margin-bottom: 1em;
-      max-width: 600px;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 0.75s;
+      margin-bottom: 1.5em;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease forwards 0.5s;
     }
-    p {
+    #home p {
       max-width: 600px;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 1s;
-      font-weight: 400;
-      font-size: 1.1rem;
-      line-height: 1.4;
+      margin: 0 auto 2em;
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease forwards 0.7s;
     }
-    .button-group {
+    .btn-group {
       display: flex;
       gap: 1.5em;
-      opacity: 0;
-      animation: fadeInUp 1s forwards 1.25s;
+      justify-content: center;
+      animation: fadeInUp 1s ease forwards 1s;
     }
     .btn {
-      cursor: pointer;
-      padding: 0.8em 2em;
-      border-radius: 30px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #4169e1;
       background: #fff;
+      color: #4169e1;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9em 2.5em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
       box-shadow: 0 5px 15px rgba(65,105,225,0.4);
-      transition: background 0.3s ease, color 0.3s ease;
+      border: none;
       text-decoration: none;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       user-select: none;
@@ -162,46 +133,195 @@
     .btn:hover {
       background: #4169e1;
       color: #fff;
-      box-shadow: 0 8px 20px rgba(65,105,225,0.6);
+      box-shadow: 0 8px 20px rgba(65,105,225,0.7);
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+
+    /* Floating circles for Home */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2));
+      z-index: 0;
     }
+    .shape1 { width: 150px; height: 150px; background: #fff5; top: 10%; left: 15%; animation: float1 6s infinite; }
+    .shape2 { width: 180px; height: 180px; background: #bbd3ff99; top: 40%; left: 35%; animation: float2 5.5s infinite; }
+    .shape3 { width: 120px; height: 120px; background: #1452f05e; top: 30%; left: 60%; animation: float3 6.5s infinite; }
+    .shape4 { width: 180px; height: 180px; background: #7a92e8aa; top: 70%; left: 20%; animation: float4 7s infinite; }
+    .shape5 { width: 100px; height: 100px; background: #e4edffaa; top: 75%; left: 70%; animation: float5 6.2s infinite; }
+
+    /* Animations */
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
+    @keyframes float1 {
+      0%,100% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-25px) translateX(8px);}
+    }
+    @keyframes float2 {
+      0%,100% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-18px) translateX(-10px);}
+    }
+    @keyframes float3 {
+      0%,100% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-22px) translateX(15px);}
+    }
+    @keyframes float4 {
+      0%,100% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-20px) translateX(-8px);}
+    }
+    @keyframes float5 {
+      0%,100% {transform: translateY(0) translateX(0);}
+      50% {transform: translateY(-15px) translateX(10px);}
+    }
+
+    /* Section background variations */
+    #about, #skills, #experience, #achievements, #quotes, #contact {
+      background: #fff;
+      padding-top: 8em;
+      padding-bottom: 8em;
+      box-shadow: inset 0 0 40px rgb(0 0 0 / 0.03);
+    }
+    /* Section headings */
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1em;
+      color: #0f2147;
+      font-weight: 700;
+      animation: fadeInUp 1s ease forwards;
+    }
+    /* Content paragraphs */
+    section p, section ul {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1em;
+      color: #2c3a6a;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-weight: 400;
+      animation: fadeInUp 1s ease forwards 0.3s;
+    }
+    ul {
+      list-style: none;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 1em;
+    }
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #4169e1;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1;
+      top: 0.2em;
+    }
+    blockquote {
+      max-width: 700px;
+      margin: 2em auto;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #2c3a6a;
+      border-left: 6px solid #4169e1;
+      padding-left: 1em;
+      line-height: 1.8;
+      animation: fadeInUp 1s ease forwards 0.3s;
+    }
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      h1 { font-size: 2.8rem; }
-      h3 { font-size: 1.3rem; }
-      header { padding-left: 5vw; }
-      nav { top: 10px; right: 20px; gap: 15px; }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2rem; }
+      nav {
+        flex-wrap: wrap;
+        right: 15px;
+        top: 15px;
+        gap: 10px;
+      }
+      section p, section ul, blockquote {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="skills.html">Skills</a>
-    <a href="experience.html">Experience</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="quotes.html">Leadership Quotes</a>
-    <a href="contact.html">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#quotes">Leadership Quotes</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <header>
+
+  <section id="home">
     <h1>Mayank Gaur</h1>
     <h3>CX & Operations Leader | Personal Branding & Consulting</h3>
     <p>A transformational leader delivering AI/ML-driven operational excellence across global Fortune 500s.</p>
-    <div class="button-group">
-      <a href="about.html" class="btn">About Me</a>
-      <a href="contact.html" class="btn">Contact</a>
+    <div class="btn-group">
+      <a href="#about" class="btn">About Me</a>
+      <a href="#contact" class="btn">Contact</a>
     </div>
     <div class="floating-shape shape1"></div>
     <div class="floating-shape shape2"></div>
     <div class="floating-shape shape3"></div>
     <div class="floating-shape shape4"></div>
     <div class="floating-shape shape5"></div>
-  </header>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a senior operations and customer experience leader with over 13 years of proven excellence in scaling global delivery organizations. My expertise lies in driving digital transformation through AI/ML-led automation, workforce analytics, and Lean Six Sigma process design. I am passionate about building high-performance teams and delivering measurable business impacts across technology, social media, insurance, and travel sectors.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Competencies</h2>
+    <ul>
+      <li>Operational Leadership – 95%</li>
+      <li>AI & Automation – 90%</li>
+      <li>Lean Six Sigma – 85%</li>
+      <li>Workforce Analytics – 80%</li>
+      <li>Customer Experience Strategy – 75%</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Career Experience</h2>
+    <p><strong>Airbnb (2019 - 2025):</strong> Led 100+ FTE global CX operations, implemented AI-powered automation reducing issue resolution time by 28%, executed vendor site setup, and boosted global sales ROI by 15-20%.</p>
+    <p><strong>EXL Services (2016 - 2019):</strong> Managed offshore insurance claims operations, led Lean Six Sigma projects improving SLA and FCR dramatically, created onboarding and SOP frameworks cutting ramp-up time by 40%.</p>
+    <p><strong>Able Professional (2013 - 2016):</strong> Built technical support teams, improved customer satisfaction to 95%, optimized workflows and reporting, and implemented knowledge management systems reducing average handle time by 20%.</p>
+  </section>
+
+  <section id="achievements">
+    <h2>Key Achievements</h2>
+    <ul>
+      <li>Led 200+ FTE global operations, delivering $12M+ savings annually</li>
+      <li>Improved CSAT/NPS by 10-20 points consistently</li>
+      <li>Reduced process defects by 27% through Lean Six Sigma initiatives</li>
+      <li>Automated workflows saving $6-9M annually</li>
+      <li>Built vendor sites with &lt;5% attrition in 120 days</li>
+      <li>Managed $200M P&L with double-digit cost reduction</li>
+    </ul>
+  </section>
+
+  <section id="quotes">
+    <h2>Leadership Wisdom</h2>
+    <blockquote>“In the midst of chaos, there is also opportunity.” – Sun Tzu, The Art of War</blockquote>
+    <blockquote>“The ultimate aim of martial arts is not victory or defeat but the perfection of one's character.” – Miyamoto Musashi, The Book of Five Rings</blockquote>
+    <blockquote>“As a man thinketh, so he is.” – James Allen</blockquote>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:gaur.mak@gmail.com">gaur.mak@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919205499179">+91 9205499179</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mayankgaur-ui" target="_blank" rel="noopener noreferrer">linkedin.com/in/mayankgaur-ui</a></p>
+  </section>
 </body>
 </html>
