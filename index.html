@@ -6,7 +6,7 @@
   <title>Mayank Gaur - CX & Operations Leader</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Global reset and base styles */
+    /* Reset and global */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -14,7 +14,7 @@
       font-family: 'Poppins', sans-serif;
       color: #0f2147;
       background: #e6f0ff;
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; /* fallback for some browsers */
     }
     nav {
       position: fixed;
@@ -31,20 +31,20 @@
       color: #0f2147;
       font-weight: 600;
       font-size: 1rem;
-      transition: color 0.3s ease;
-      cursor: pointer;
       padding: 0.5em 1em;
       border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     }
-    nav a:hover {
-      color: #fff;
+    nav a:hover, nav a:focus {
       background-color: #4169e1;
+      color: white;
+      outline: none;
       box-shadow: 0 4px 15px rgba(65,105,225,0.6);
     }
-
     section {
       min-height: 100vh;
-      padding: 6em 5vw 4em 5vw;
+      padding: 6em 5vw 4em;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -55,6 +55,12 @@
       font-weight: 700;
       margin-bottom: 0.5em;
       color: #0f2147;
+    }
+    h1 {
+      font-size: 3.5rem;
+    }
+    h2 {
+      font-size: 2.8rem;
     }
     p, ul {
       font-weight: 400;
@@ -72,7 +78,6 @@
       position: relative;
       padding-left: 1.5em;
       margin-bottom: 1em;
-      font-size: 1.1rem;
     }
     ul li::before {
       content: "✔";
@@ -81,8 +86,8 @@
       color: #4169e1;
       font-weight: 700;
       font-size: 1.1rem;
-      line-height: 1;
       top: 0.2em;
+      line-height: 1;
     }
     /* Home Section */
     #home {
@@ -91,27 +96,15 @@
       padding-top: 8em;
       padding-bottom: 8em;
     }
-    #home h1 {
-      font-size: 4rem;
-      animation: fadeInUp 1s ease forwards;
-    }
     #home h3 {
       font-size: 1.8rem;
       margin-bottom: 1.5em;
       opacity: 0.9;
-      animation: fadeInUp 1s ease forwards 0.5s;
-    }
-    #home p {
-      max-width: 600px;
-      margin: 0 auto 2em;
-      font-size: 1.2rem;
-      animation: fadeInUp 1s ease forwards 0.7s;
     }
     .btn-group {
       display: flex;
       gap: 1.5em;
       justify-content: center;
-      animation: fadeInUp 1s ease forwards 1s;
     }
     .btn {
       background: #fff;
@@ -130,13 +123,13 @@
       justify-content: center;
       user-select: none;
     }
-    .btn:hover {
+    .btn:hover, .btn:focus {
       background: #4169e1;
       color: #fff;
       box-shadow: 0 8px 20px rgba(65,105,225,0.7);
+      outline: none;
     }
-
-    /* Floating circles for Home */
+    /* Floating circles */
     .floating-shape {
       position: absolute;
       border-radius: 50%;
@@ -151,12 +144,6 @@
     .shape3 { width: 120px; height: 120px; background: #1452f05e; top: 30%; left: 60%; animation: float3 6.5s infinite; }
     .shape4 { width: 180px; height: 180px; background: #7a92e8aa; top: 70%; left: 20%; animation: float4 7s infinite; }
     .shape5 { width: 100px; height: 100px; background: #e4edffaa; top: 75%; left: 70%; animation: float5 6.2s infinite; }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
     @keyframes float1 {
       0%,100% {transform: translateY(0) translateX(0);}
       50% {transform: translateY(-25px) translateX(8px);}
@@ -177,50 +164,14 @@
       0%,100% {transform: translateY(0) translateX(0);}
       50% {transform: translateY(-15px) translateX(10px);}
     }
-
-    /* Section background variations */
-    #about, #skills, #experience, #achievements, #quotes, #contact {
-      background: #fff;
-      padding-top: 8em;
-      padding-bottom: 8em;
-      box-shadow: inset 0 0 40px rgb(0 0 0 / 0.03);
-    }
-    /* Section headings */
+    /* Sections alternate background for subtle differentiation */
+    #about, #experience, #quotes { background: #f9fbff; }
+    /* Section headers and content */
     section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1em;
-      color: #0f2147;
-      font-weight: 700;
       animation: fadeInUp 1s ease forwards;
     }
-    /* Content paragraphs */
-    section p, section ul {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 1em;
-      color: #2c3a6a;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      font-weight: 400;
+    section p, section ul, blockquote {
       animation: fadeInUp 1s ease forwards 0.3s;
-    }
-    ul {
-      list-style: none;
-    }
-    ul li {
-      position: relative;
-      padding-left: 1.5em;
-      margin-bottom: 1em;
-    }
-    ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #4169e1;
-      font-weight: 700;
-      font-size: 1.1rem;
-      line-height: 1;
-      top: 0.2em;
     }
     blockquote {
       max-width: 700px;
@@ -231,17 +182,18 @@
       border-left: 6px solid #4169e1;
       padding-left: 1em;
       line-height: 1.8;
-      animation: fadeInUp 1s ease forwards 0.3s;
     }
-    /* Responsive adjustments */
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    /* Responsive */
     @media (max-width: 768px) {
       h1 { font-size: 3rem; }
       h2 { font-size: 2rem; }
       nav {
         flex-wrap: wrap;
-        right: 15px;
-        top: 15px;
-        gap: 10px;
+        right: 15px; top: 15px; gap: 10px;
       }
       section p, section ul, blockquote {
         font-size: 1rem;
@@ -323,5 +275,18 @@
     <p>Phone: <a href="tel:+919205499179">+91 9205499179</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/mayankgaur-ui" target="_blank" rel="noopener noreferrer">linkedin.com/in/mayankgaur-ui</a></p>
   </section>
+
+  <script>
+    // Smooth scroll for navigation links (fallback for browsers)
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetElem = document.querySelector(this.getAttribute('href'));
+        if (targetElem) {
+          targetElem.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
