@@ -4,162 +4,195 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mayank Gaur - CX & Operations Leader</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Basic resets and font styles */
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
-      background: #f0f4f8;
-      color: #2a3a5f;
+    /* Reset and base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-    h1, h2, h3 {
-      margin: 0 0 0.5em 0;
-      font-weight: 700;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e6f0ff;
+      height: 100vh;
+      overflow-x: hidden;
+      color: #0f2147;
     }
-    p {
-      margin: 0 0 1.2em 0;
-      line-height: 1.5;
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      z-index: 10;
+      display: flex;
+      gap: 25px;
     }
-    /* Parallax container */
-    section {
+    nav a {
+      text-decoration: none;
+      color: #0f2147;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #4169e1;
+    }
+
+    header {
       position: relative;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 3em 2em;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-    }
-    /* Color stripes and overlays */
-    #intro { background: linear-gradient(135deg, #4568dc, #b06ab3); color: #ffffff; }
-    #about { background: #cbe6f7; }
-    #skills { background: #e1f0fc; }
-    #experience { background: #c7dbff; }
-    #achievements { background: #aecbff; }
-    #quotes { background: #5b7cd6; color: white; }
-    #contact { background: #4285f4; color: white; }
-    
-    /* Skill bars */
-    .skill-bar {
-      background: #ddd;
-      border-radius: 20px;
-      margin-bottom: 1em;
+      padding-left: 10vw;
+      background: linear-gradient(120deg, #4169e1 30%, #8fb9ff 90%);
+      color: #fff;
       overflow: hidden;
-      width: 100%;
-      max-width: 400px;
     }
-    .skill-progress {
-      height: 20px;
-      background: #3f51b5;
-      line-height: 20px;
-      color: white;
-      padding: 0 12px;
-      text-align: right;
+
+    /* Floating shapes */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+    }
+
+    .shape1 {
+      width: 150px;
+      height: 150px;
+      background: #fff5;
+      top: 10%;
+      left: 15%;
+      animation-delay: 0s;
+    }
+    .shape2 {
+      width: 200px;
+      height: 200px;
+      background: #bbd3ff99;
+      top: 40%;
+      left: 35%;
+      animation-delay: 2s;
+    }
+    .shape3 {
+      width: 120px;
+      height: 120px;
+      background: #1452f05e;
+      top: 30%;
+      left: 60%;
+      animation-delay: 4s;
+    }
+    .shape4 {
+      width: 180px;
+      height: 180px;
+      background: #7a92e8aa;
+      top: 70%;
+      left: 20%;
+      animation-delay: 6s;
+    }
+    .shape5 {
+      width: 100px;
+      height: 100px;
+      background: #e4edffaa;
+      top: 75%;
+      left: 70%;
+      animation-delay: 8s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+    }
+
+    h1 {
+      font-size: 4rem;
       font-weight: 700;
-      border-radius: 20px 0 0 20px;
-      animation: fillBar 2s ease forwards;
-      width: 0;
+      max-width: 600px;
+      line-height: 1.1;
+      margin-bottom: 0.35em;
     }
-    @keyframes fillBar {
-      from { width: 0; }
-      to { width: var(--percent); }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1em;
+      max-width: 600px;
+      opacity: 0.9;
     }
-    /* Container and layout */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+
+    .button-group {
+      display: flex;
+      gap: 1.5em;
     }
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.3s;
+
+    .btn {
+      cursor: pointer;
+      padding: 0.8em 2em;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4169e1;
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(65,105,225,0.4);
+      transition: background 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    .btn:hover {
+      background: #4169e1;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(65,105,225,0.6);
     }
+
     /* Responsive */
-    @media (max-width: 600px) {
-      section {
-        padding: 2em 1em;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+      header {
+        padding-left: 5vw;
+      }
+      nav {
+        top: 10px;
+        right: 20px;
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <section id="intro">
-    <div class="container">
-      <h1>Mayank Gaur</h1>
-      <h3>CX & Operations Leader | Personal Branding & Consulting</h3>
-      <p>A transformational leader delivering AI/ML-driven operational excellence across global Fortune 500s.</p>
-    </div>
-  </section>
 
-  <section id="about">
-    <div class="container fade-in">
-      <h2>About Me</h2>
-      <p>A senior operations and customer experience leader with 13+ years of global delivery impact. Experienced in managing large teams, driving automation, and streamlining customer journey in diverse industries including technology, social media, insurance, and travel.</p>
-    </div>
-  </section>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section id="skills">
-    <div class="container fade-in">
-      <h2>Skills & Competencies</h2>
-      <div class="skill-bar"><div class="skill-progress" style="--percent:95%;">Operational Leadership 95%</div></div>
-      <div class="skill-bar"><div class="skill-progress" style="--percent:90%;">AI & Automation 90%</div></div>
-      <div class="skill-bar"><div class="skill-progress" style="--percent:85%;">Lean Six Sigma 85%</div></div>
-      <div class="skill-bar"><div class="skill-progress" style="--percent:80%;">Workforce Analytics 80%</div></div>
-      <div class="skill-bar"><div class="skill-progress" style="--percent:75%;">Customer Experience Strategy 75%</div></div>
+  <header>
+    <h1>Mayank Gaur</h1>
+    <h3>CX & Operations Leader | Personal Branding & Consulting</h3>
+    <p>A transformational leader delivering AI/ML-driven operational excellence across global Fortune 500s.</p>
+    <div class="button-group">
+      <a href="#about" class="btn">About Me</a>
+      <a href="#contact" class="btn">Contact</a>
     </div>
-  </section>
 
-  <section id="experience">
-    <div class="container fade-in">
-      <h2>Career Journey</h2>
-      <p><strong>Airbnb (2019 - 2025)</strong>: Led 100+ FTE global CX operations, implemented AI-powered automation reducing issue resolution time by 28%, executed vendor site setup, and boosted global sales ROI by 15-20%.</p>
-      <p><strong>EXL Services (2016 - 2019)</strong>: Managed offshore insurance claims operations, led Lean Six Sigma projects improving SLA and FCR dramatically, created onboarding and SOP frameworks cutting ramp-up time by 40%.</p>
-      <p><strong>Able Professional (2013 - 2016)</strong>: Built technical support teams, improved customer satisfaction to 95%, optimized workflows and reporting, and implemented knowledge management systems reducing average handle time by 20%.</p>
-    </div>
-  </section>
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="floating-shape shape4"></div>
+    <div class="floating-shape shape5"></div>
+  </header>
 
-  <section id="achievements">
-    <div class="container fade-in">
-      <h2>Key Achievements</h2>
-      <ul>
-        <li>Led 200+ FTE global operations, delivering $12M+ savings annually</li>
-        <li>Improved CSAT/NPS by 10-20 points consistently</li>
-        <li>Reduced process defects by 27% through Lean Six Sigma initiatives</li>
-        <li>Automated workflows saving $6-9M annually</li>
-        <li>Built vendor sites with <5% attrition in 120 days</li>
-        <li>Managed $200M P&L with double-digit cost reduction</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="quotes">
-    <div class="container fade-in">
-      <h2>Leadership Wisdom</h2>
-      <blockquote style="font-style: italic; font-size: 1.2em; border-left: 4px solid #fff; padding-left: 1em; color: #cfcfe6;">“In the midst of chaos, there is also opportunity.” <br> – Sun Tzu, The Art of War</blockquote>
-      <blockquote style="font-style: italic; font-size: 1.2em; border-left: 4px solid #fff; padding-left: 1em; color: #cfcfe6;">“The ultimate aim of martial arts is not victory or defeat but the perfection of one's character.” <br> – Miyamoto Musashi, The Book of Five Rings</blockquote>
-      <blockquote style="font-style: italic; font-size: 1.2em; border-left: 4px solid #fff; padding-left: 1em; color: #cfcfe6;">“As a man thinketh, so he is.” <br> – James Allen</blockquote>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container fade-in">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:gaur.mak@gmail.com" style="color: white;">gaur.mak@gmail.com</a></p>
-      <p>Phone: <a href="tel:+919205499179" style="color: white;">+91 9205499179</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/mayankgaur-ui" target="_blank" style="color: white;">linkedin.com/in/mayankgaur-ui</a></p>
-    </div>
-  </section>
 </body>
 </html>
