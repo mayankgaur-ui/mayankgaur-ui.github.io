@@ -6,7 +6,6 @@
   <title>Mayank Gaur - CX & Operations Leader</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset and base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -24,6 +23,8 @@
       z-index: 10;
       display: flex;
       gap: 25px;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards 1s;
     }
     nav a {
       text-decoration: none;
@@ -36,7 +37,6 @@
     nav a:hover {
       color: #4169e1;
     }
-
     header {
       position: relative;
       height: 100vh;
@@ -48,83 +48,100 @@
       color: #fff;
       overflow: hidden;
     }
-
-    /* Floating shapes */
     .floating-shape {
       position: absolute;
       border-radius: 50%;
       opacity: 0.8;
-      animation: float 6s ease-in-out infinite;
       filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
     }
-
     .shape1 {
-      width: 150px;
-      height: 150px;
+      width: 150px; height: 150px;
       background: #fff5;
-      top: 10%;
-      left: 15%;
-      animation-delay: 0s;
+      top: 10%; left: 15%;
+      animation-name: float1;
+      animation-duration: 6s;
     }
     .shape2 {
-      width: 200px;
-      height: 200px;
+      width: 200px; height: 200px;
       background: #bbd3ff99;
-      top: 40%;
-      left: 35%;
-      animation-delay: 2s;
+      top: 40%; left: 35%;
+      animation-name: float2;
+      animation-duration: 5.5s;
     }
     .shape3 {
-      width: 120px;
-      height: 120px;
+      width: 120px; height: 120px;
       background: #1452f05e;
-      top: 30%;
-      left: 60%;
-      animation-delay: 4s;
+      top: 30%; left: 60%;
+      animation-name: float3;
+      animation-duration: 6.5s;
     }
     .shape4 {
-      width: 180px;
-      height: 180px;
+      width: 180px; height: 180px;
       background: #7a92e8aa;
-      top: 70%;
-      left: 20%;
-      animation-delay: 6s;
+      top: 70%; left: 20%;
+      animation-name: float4;
+      animation-duration: 7s;
     }
     .shape5 {
-      width: 100px;
-      height: 100px;
+      width: 100px; height: 100px;
       background: #e4edffaa;
-      top: 75%;
-      left: 70%;
-      animation-delay: 8s;
+      top: 75%; left: 70%;
+      animation-name: float5;
+      animation-duration: 6.2s;
     }
-
-    @keyframes float {
+    @keyframes float1 {
       0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-20px) translateX(10px); }
+      50% { transform: translateY(-25px) translateX(8px); }
     }
-
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-18px) translateX(-10px); }
+    }
+    @keyframes float3 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-22px) translateX(15px); }
+    }
+    @keyframes float4 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(-8px); }
+    }
+    @keyframes float5 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-15px) translateX(10px); }
+    }
     h1 {
       font-size: 4rem;
       font-weight: 700;
       max-width: 600px;
       line-height: 1.1;
       margin-bottom: 0.35em;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 0.5s;
     }
-
     h3 {
       font-size: 1.8rem;
       font-weight: 500;
       margin-bottom: 1em;
       max-width: 600px;
-      opacity: 0.9;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 0.75s;
     }
-
+    p {
+      max-width: 600px;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 1s;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
     .button-group {
       display: flex;
       gap: 1.5em;
+      opacity: 0;
+      animation: fadeInUp 1s forwards 1.25s;
     }
-
     .btn {
       cursor: pointer;
       padding: 0.8em 2em;
@@ -142,34 +159,27 @@
       justify-content: center;
       user-select: none;
     }
-
     .btn:hover {
       background: #4169e1;
       color: #fff;
       box-shadow: 0 8px 20px rgba(65,105,225,0.6);
     }
-
-    /* Responsive */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-      h3 {
-        font-size: 1.3rem;
-      }
-      header {
-        padding-left: 5vw;
-      }
-      nav {
-        top: 10px;
-        right: 20px;
-        gap: 15px;
-      }
+      h1 { font-size: 2.8rem; }
+      h3 { font-size: 1.3rem; }
+      header { padding-left: 5vw; }
+      nav { top: 10px; right: 20px; gap: 15px; }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
@@ -179,7 +189,6 @@
     <a href="quotes.html">Leadership Quotes</a>
     <a href="contact.html">Contact</a>
   </nav>
-
   <header>
     <h1>Mayank Gaur</h1>
     <h3>CX & Operations Leader | Personal Branding & Consulting</h3>
@@ -188,13 +197,11 @@
       <a href="about.html" class="btn">About Me</a>
       <a href="contact.html" class="btn">Contact</a>
     </div>
-
     <div class="floating-shape shape1"></div>
     <div class="floating-shape shape2"></div>
     <div class="floating-shape shape3"></div>
     <div class="floating-shape shape4"></div>
     <div class="floating-shape shape5"></div>
   </header>
-
 </body>
 </html>
